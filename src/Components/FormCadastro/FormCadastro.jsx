@@ -9,7 +9,6 @@ const Formulario = () => {
     const nome = useRef()
     const email = useRef()
     const senha = useRef()
-    const cpf = useRef()
 
     function enviarDados(event){
         event.preventDefault()
@@ -17,7 +16,6 @@ const Formulario = () => {
             nome: nome.current.value,
             email: email.current.value,
             senha: senha.current.value,
-            cpf: cpf.current.value
         }).then((res)=>console.log(res.data)).catch((err)=>console.log(err))
     }
 
