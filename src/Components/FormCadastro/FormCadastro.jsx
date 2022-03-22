@@ -7,19 +7,17 @@ import 'bootstrap/dist/css/bootstrap.css';
 const Formulario = () => {
 
     const nome = useRef()
-    const endereco = useRef()
-    const telefone = useRef()
-    const cpf = useRef()
     const email = useRef()
+    const senha = useRef()
+    const cpf = useRef()
 
     function enviarDados(event){
         event.preventDefault()
         api.post("/contatos/",{
             nome: nome.current.value,
-            foto: endereco.current.value,
-            telefone: telefone.current.value,
-            cpf: cpf.current.value,
-            email: email.current.value
+            email: email.current.value,
+            senha: senha.current.value,
+            cpf: cpf.current.value
         }).then((res)=>console.log(res.data)).catch((err)=>console.log(err))
     }
 
@@ -34,24 +32,15 @@ const Formulario = () => {
             </div>
             
             <div class="input-group flex-nowrap mt-4">
-                <span class="input-group-text" id="addon-wrapping">Endereço</span>
-                <input required type="text" className="form-control" ref={endereco} placeholder="Endereço" aria-label="Endereço" aria-describedby="addon-wrapping" />
-            </div>
-            
-            <div class="input-group flex-nowrap mt-4">
-                <span class="input-group-text" id="addon-wrapping">Telefone</span>
-                <input required type="text" className="form-control" ref={telefone} placeholder="Telefone" aria-label="Telefone" aria-describedby="addon-wrapping" />
-            </div>
-            
-            <div class="input-group flex-nowrap mt-4">
                 <span class="input-group-text" id="addon-wrapping">Email</span>
                 <input required type="text" className="form-control" ref={email} placeholder="Email" aria-label="Email" aria-describedby="addon-wrapping" />
             </div>
             
             <div class="input-group flex-nowrap mt-4">
-                <span class="input-group-text" id="addon-wrapping">CPF</span>
-                <input required type="text" className="form-control" ref={cpf} placeholder="CPF" aria-label="CPF" aria-describedby="addon-wrapping" />
+                <span class="input-group-text" id="addon-wrapping">Senha</span>
+                <input required type="text" className="form-control" ref={senha} placeholder="Senha" aria-label="Senha" aria-describedby="addon-wrapping" />
             </div>
+            
             <div className="col s12">
                             <button className="waves-light btn" type="submit">Enviar</button>
                         </div>
