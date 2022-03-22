@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import "../../Assets/css/styles.min.css";
 import './Main.css';
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -14,7 +16,7 @@ export default () => {
               por meio da tecnologia sem perder de vista a cultura, o histórico e as experiências indígenas. </p>
           </div>          
         </div>     
-        </main>
+      </main>
     </>
   );
 };
